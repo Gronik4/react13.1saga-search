@@ -6,10 +6,8 @@ import { detailChoice } from '../actions/actionCreator';
 
 export const ShowChoice = ({ search_result }) => {
   const { item, loading, error } = search_result;
-  console.log(search_result.state);
-  
   const dispatch = useDispatch();
-
+  
   function reloadSearch() {
     const string = document.querySelector('.ipt').value;
     dispatch(changeField(string));

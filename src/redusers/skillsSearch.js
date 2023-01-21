@@ -8,18 +8,19 @@ const stateSearch = {
 }
 
 export default function skillsSearch(state = stateSearch, action) {
+
   switch(action.type) {
     case CHANGE_FIELD:
       const { search } = action.payload;
       return {...state.state, search};
     case SEARCH_REQUEST:
-      return { ...state.state, loading: true, error: null};
+      return { ...state, loading: true, error: null};
     case SEARCH_RESULT:
       const { item } = action.payload;
-      return { ...state.state, item, loading: false, error: null};
+      return { ...state, item, loading: false, error: null};
     case SEARCH_FAILURE:
       const { error } = action.payload;
-      return { ...state.state, loading: false, error }
-    default: return { state };
+      return { ...state, loading: false, error }
+    default: return state ;
   }
 }

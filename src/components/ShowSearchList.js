@@ -3,7 +3,10 @@ import { services } from '../pseudoServer/GiveResult'
 
 export const ShowSearchList = () => {
   return (
-    <p>Поиск ведем по таким услугам: "{services.map((o, index) => {return(<span key={index}>{o.name}, </span>)})}"</p>
+    <div>
+      <p>Поиск ведем по таким услугам: "{services.map((o, index) => {return(<span key={index}>{o.name}, </span>)})}."</p>
+      <p>Ввод данных в русской раскладке.</p>
+    </div>
     
   )
 }

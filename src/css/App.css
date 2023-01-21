@@ -46,3 +46,4 @@ body {
         border-radius: 5px;
       }
       .btn:hover {cursor: pointer;}
+    .detail_result {color: blue;}

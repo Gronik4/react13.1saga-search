@@ -13,9 +13,9 @@ export const services = [
 
 export default function giveResult(request) {
   if(!request) {console.log('request is empty!'); return;}
-  const rand = Math.floor(Math.random() * 10);
   if(typeof(request) === 'string') {
     return new Promise((resolve, reject) => {
+      const rand = Math.floor(Math.random() * 10);
       setTimeout(() => {
         const res = services.filter((o) => o.name.toLowerCase().startsWith(request.toLowerCase()));
         if(rand < 8) {
@@ -23,16 +23,17 @@ export default function giveResult(request) {
         } else {
           reject( new Error('Упс!! Сбой на сервере!!'));
         }
-      }, rand < 4? rand * 300: 300);
+      }, rand < 4? rand * 500: 500);
     })
   }
   return new Promise((resolve, reject) => {
+    const rand = Math.floor(Math.random() * 10);
     setTimeout(() => {
       const choice = services.find(item => item.id === request);
-      if(rand < 8) {
-        if(choice) { resolve(choice); } else { reject(new Error('Не верный запрос')); }
+      if(rand < 6) {
+        resolve(choice);
       } else { reject( new Error('Упс!! Сбой на сервере!!')); }
-    }, rand < 4? rand * 300: 300);
+    }, rand < 4? rand * 500: 500);
   })
 }
 

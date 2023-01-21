@@ -12,7 +12,7 @@ function* hendleChangeFieldSaga(action) {
 }
 // watcher
 function* watchChangeFieldSaga() {
-  yield debounce(300, filterChangeField, hendleChangeFieldSaga);
+  yield debounce(500, filterChangeField, hendleChangeFieldSaga);
 }
 // worker
 function* hendelSearchSaga(action) {

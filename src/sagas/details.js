@@ -3,12 +3,12 @@ import { detailFailure, detailRequest, detailResult } from "../actions/actionCre
 import { DETAIL_CHOICE, DETAIL_REQUEST } from "../actions/actionTypes";
 import { searchRequestData } from "../api/searchApi";
 
-function transformationChoice({type, payload}) {
-  return type === DETAIL_CHOICE && Number(payload.choice) !== 0;
+function transformationChoice({type, payloads}) {
+  return type === DETAIL_CHOICE && Number(payloads.choice) !== 0;
 }
 // worker
 function* handelChoiceSaga(action) {
-  yield put(detailRequest(action.payload.choice))
+  yield put(detailRequest(action.payloads.choice))
 }
 // watcher
 function* watchChangeChoiceSaga() {
@@ -19,7 +19,7 @@ function* handelDetailSaga(action) {
   try {
     const retryCount = 3;
     const retryDelay = 1 * 1000; //ms
-    const data = yield retry(retryCount, retryDelay, searchRequestData, action.payload.choice);
+    const data = yield retry(retryCount, retryDelay, searchRequestData, action.payloads.choice);
     yield put(detailResult(data));
   } catch(e) {
     yield put(detailFailure(e.message));
