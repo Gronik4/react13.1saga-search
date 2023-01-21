@@ -8,6 +8,6 @@
 
 Поскольку на Heroku развернуть сервер не удалось, а замена не найдена. Пока. Мной. Вместо сервера использовал функцию giveResult, что в папке pseudoServer.
 
-**Project Sample** 
+**Project Sample** [![Build status](https://ci.appveyor.com/api/projects/status/u3hst01svg20l288?svg=true)](https://ci.appveyor.com/project/Gronik4/react13-1saga-search)
 
 [Посмотреть результат](https://gronik4.github.io/react13.1saga-search/)
