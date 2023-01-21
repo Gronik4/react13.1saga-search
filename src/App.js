@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <ShowSearchList/> 
-      <input type='search' className='ipt' onChange={change}/> Поиск
+      <input type='search' className='ipt' onChange={change} placeholder='Type something to search...'/> Поиск
       <ShowChoice search_result={search_V_result}/>
       <ShowDetails details_result={details_V_result}/>
     </div>
